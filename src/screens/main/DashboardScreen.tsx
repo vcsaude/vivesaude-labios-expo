@@ -182,7 +182,7 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
     } catch (error) {
       Alert.alert(
         'Erro ao Atualizar',
-        'N�o foi poss�vel atualizar os dados. Tente novamente.',
+        'Não foi possível atualizar os dados. Tente novamente.',
         [{ text: 'OK' }]
       );
     } finally {
@@ -243,7 +243,7 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
 
     const statusLabels = {
       processing: 'Analisando',
-      completed: 'Conclu�do',
+      completed: 'Concluído',
       failed: 'Erro',
     };
 
@@ -314,7 +314,7 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
           <View style={styles.headerContent}>
             <View style={styles.userInfo}>
               <Text style={styles.greeting}>{greeting},</Text>
-              <Text style={styles.userName}>{user?.name?.split(' ')[0] || 'Usu�rio'}</Text>
+              <Text style={styles.userName}>{user?.name?.split(' ')[0] || 'Usuário'}</Text>
             </View>
             
             <View style={styles.headerActions}>
@@ -349,13 +349,13 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
             },
           ]}
         >
-          <Text style={styles.sectionTitle}>Estat�sticas</Text>
+          <Text style={styles.sectionTitle}>Estatísticas</Text>
           
           <View style={styles.statsGrid}>
             <StatCard
               title="Total de Exames"
               value={stats.totalExams.toString()}
-              subtitle="An�lises realizadas"
+              subtitle="Análises realizadas"
               icon="document-text"
               color={colors.primary[500]}
               trend={{ value: '+12%', isPositive: true }}
@@ -372,14 +372,14 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
             <StatCard
               title="Alertas"
               value={stats.alertsCount.toString()}
-              subtitle="Requerem aten��o"
+              subtitle="Requerem atenção"
               icon="alert-circle"
               color={stats.alertsCount > 0 ? colors.error[500] : colors.success[500]}
               trend={stats.alertsCount > 0 ? { value: `${stats.alertsCount} alertas`, isPositive: false } : undefined}
             />
             
             <StatCard
-              title="Precis�o M�dia"
+              title="Precisão Média"
               value="98,5%"
               subtitle="Taxa de assertividade"
               icon="analytics"
@@ -399,19 +399,19 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
             },
           ]}
         >
-          <Text style={styles.sectionTitle}>A��es R�pidas</Text>
+          <Text style={styles.sectionTitle}>Ações Rápidas</Text>
           
           <View style={styles.quickActionsGrid}>
             <QuickActionCard
               title="Novo Exame"
-              subtitle="Enviar para an�lise"
+              subtitle="Enviar para análise"
               icon="add-circle"
               color={colors.primary[500]}
               onPress={navigateToNewExam}
             />
             
             <QuickActionCard
-              title="Hist�rico"
+              title="Histórico"
               subtitle="Ver todos os exames"
               icon="time"
               color={colors.secondary[600]}
@@ -447,7 +447,7 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
                 <Ionicons name="document-outline" size={48} color={colors.text.tertiary} />
                 <Text style={styles.emptyTitle}>Nenhum exame ainda</Text>
                 <Text style={styles.emptySubtitle}>
-                  Comece enviando seu primeiro exame para an�lise
+                  Comece enviando seu primeiro exame para análise
                 </Text>
                 <Button
                   title="Enviar Primeiro Exame"
@@ -477,7 +477,7 @@ export default function DashboardScreen({ navigation }: DashboardScreenProps) {
             >
               <View style={styles.tipsHeader}>
                 <Ionicons name="bulb" size={24} color={colors.health.info} />
-                <Text style={styles.tipsTitle}>Dica de Sa�de</Text>
+                <Text style={styles.tipsTitle}>Dica de Saúde</Text>
               </View>
               
               <Text style={styles.tipsContent}>
