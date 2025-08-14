@@ -13,9 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "bundleIdentifier": "com.vcsaude.vivesaudelabios",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.vcsaude.vivesaudelabios",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
