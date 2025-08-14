@@ -1,0 +1,104 @@
+{
+  "cli": {
+    "version": ">= 5.9.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium",
+        "simulator": true,
+        "bundleIdentifier": "com.vivesaude.labios.dev"
+      },
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug",
+        "applicationId": "com.vivesaude.labios.dev"
+      },
+      "channel": "development",
+      "env": {
+        "EXPO_PUBLIC_APP_ENV": "development",
+        "EXPO_PUBLIC_API_URL": "https://dev-api.vivesaude.com.br"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium",
+        "bundleIdentifier": "com.vivesaude.labios.preview",
+        "simulator": false
+      },
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease",
+        "applicationId": "com.vivesaude.labios.preview"
+      },
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_APP_ENV": "staging",
+        "EXPO_PUBLIC_API_URL": "https://staging-api.vivesaude.com.br"
+      }
+    },
+    "preview-simulator": {
+      "extends": "preview",
+      "ios": {
+        "simulator": true,
+        "resourceClass": "m-medium"
+      }
+    },
+    "production": {
+      "ios": {
+        "resourceClass": "m-large",
+        "bundleIdentifier": "com.vivesaude.labios",
+        "simulator": false,
+        "entitlements": {
+          "com.apple.developer.healthkit": true,
+          "com.apple.developer.healthkit.access": [
+            "health-records"
+          ]
+        }
+      },
+      "android": {
+        "buildType": "aab",
+        "gradleCommand": ":app:bundleRelease",
+        "applicationId": "com.vivesaude.labios"
+      },
+      "channel": "production",
+      "env": {
+        "EXPO_PUBLIC_APP_ENV": "production",
+        "EXPO_PUBLIC_API_URL": "https://api.vivesaude.com.br"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "suporte@vivesaude.com.br",
+        "ascAppId": "1234567890",
+        "appleTeamId": "TEAM123456"
+      },
+      "android": {
+        "serviceAccountKeyPath": "../secrets/google-service-account.json",
+        "track": "production"
+      }
+    },
+    "preview": {
+      "ios": {
+        "appleId": "suporte@vivesaude.com.br",
+        "ascAppId": "1234567890",
+        "appleTeamId": "TEAM123456"
+      },
+      "android": {
+        "serviceAccountKeyPath": "../secrets/google-service-account.json",
+        "track": "internal"
+      }
+    }
+  },
+  "updates": {
+    "url": "https://u.expo.dev/YOUR_PROJECT_ID"
+  },
+  "runtimeVersion": {
+    "policy": "sdkVersion"
+  }
+}

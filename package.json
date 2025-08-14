@@ -1,39 +1,159 @@
 {
   "name": "vivesaude-labios-expo",
   "version": "1.0.0",
+  "description": "🏥 Aplicação móvel para digitalização e análise inteligente de exames laboratoriais",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "ios": "expo start --ios", 
+    "web": "expo start --web",
+    "dev": "expo start --dev-client",
+    "clear": "expo start --clear",
+    "tunnel": "expo start --tunnel",
+    
+    "build:ios": "eas build --platform ios",
+    "build:android": "eas build --platform android",
+    "build:all": "eas build --platform all",
+    "build:preview": "eas build --platform all --profile preview",
+    "build:production": "eas build --platform all --profile production",
+    
+    "submit:ios": "eas submit --platform ios",
+    "submit:android": "eas submit --platform android", 
+    "submit:all": "eas submit --platform all",
+    
+    "update": "eas update",
+    "update:preview": "eas update --branch preview",
+    "update:production": "eas update --branch production",
+    
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testPathPattern=__tests__/unit",
+    "test:integration": "jest --testPathPattern=__tests__/integration",
+    "test:e2e": "detox test",
+    
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    
+    "validate": "npm run type-check && npm run lint && npm run test",
+    "ci": "npm run validate && npm run build:preview",
+    
+    "postinstall": "expo install --fix",
+    "doctor": "expo doctor",
+    "install:clean": "rm -rf node_modules && npm install",
+    "reset": "rm -rf node_modules && rm package-lock.json && npm install",
+    
+    "env:setup": "cp .env.example .env",
+    "secrets:encrypt": "eas secret:push --scope project",
+    "config:validate": "expo config --type public",
+    
+    "security:audit": "npm audit && npx audit-ci",
+    "security:scan": "npx snyk test",
+    "deps:update": "npx expo install --fix && npm update",
+    "deps:check": "npx expo install --check"
+  },
+  "keywords": [
+    "healthcare",
+    "medical",
+    "lab-exams", 
+    "AI-analysis",
+    "react-native",
+    "expo",
+    "HIPAA",
+    "LGPD",
+    "mobile-health",
+    "digital-health",
+    "healthcare-app",
+    "medical-records",
+    "lab-results",
+    "AI-healthcare"
+  ],
+  "author": {
+    "name": "ViveSaude Team",
+    "email": "dev@vivesaude.com.br",
+    "url": "https://vivesaude.com.br"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/vcsaude/vivesaude-labios-expo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcsaude/vivesaude-labios-expo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vcsaude/vivesaude-labios-expo/issues",
+    "email": "bugs@vivesaude.com.br"
   },
   "dependencies": {
     "@expo/config-plugins": "^10.1.2",
+    "@expo/vector-icons": "^13.0.0",
     "@react-navigation/bottom-tabs": "^7.4.6",
     "@react-navigation/native": "^7.1.17",
     "@react-navigation/stack": "^7.4.7",
+    "@react-native-async-storage/async-storage": "^1.21.0",
+    "@tanstack/react-query": "^5.17.0",
     "expo": "~53.0.20",
     "expo-camera": "^16.1.11",
     "expo-crypto": "^14.1.5",
     "expo-dev-client": "^5.2.4",
+    "expo-device": "~5.9.0",
     "expo-document-picker": "^13.1.6",
     "expo-file-system": "^18.1.11",
+    "expo-font": "~11.10.0",
+    "expo-haptics": "~12.8.0",
+    "expo-image-picker": "~14.7.0",
     "expo-local-authentication": "^16.0.5",
     "expo-notifications": "^0.31.4",
+    "expo-secure-store": "~12.9.0",
+    "expo-sharing": "~11.10.0",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-native": "0.79.5",
+    "react-native-elements": "^3.4.3",
+    "react-native-pdf": "^6.7.0",
     "react-native-safe-area-context": "^5.6.0",
     "react-native-screens": "^4.14.0",
-    "react-dom": "19.0.0",
     "react-native-web": "^0.20.0",
-    "@expo/metro-runtime": "~5.0.4"
+    "@expo/metro-runtime": "~5.0.4",
+    "zustand": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@types/jest": "^29.5.0",
     "@types/react": "~19.0.10",
+    "@types/react-native": "~0.73.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-expo": "~7.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.1.0",
+    "jest": "^29.0.0",
+    "jest-expo": "~50.0.0",
+    "prettier": "^3.0.0",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "expo": {
+    "install": {
+      "exclude": [
+        "react-native-safe-area-context"
+      ]
+    }
+  },
+  "private": false,
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/vivesaude"
+  }
 }

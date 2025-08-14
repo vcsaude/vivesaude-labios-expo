@@ -1,0 +1,187 @@
+name: 🐛 Bug Report
+description: Report a bug in ViveSaude Lábios
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🏥 ViveSaude Lábios Bug Report
+        
+        Thanks for taking the time to report a bug! This helps us improve the app for everyone.
+        
+        **⚠️ Security Issues**: If this is a security vulnerability, please email security@vivesaude.com.br instead.
+        **📱 Healthcare Data**: Never include real patient data or PHI in bug reports.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App Version
+      description: What version of ViveSaude Lábios are you using?
+      placeholder: "1.0.0 (Build 123)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform are you experiencing this bug on?
+      options:
+        - iOS
+        - Android
+        - Web
+        - Multiple platforms
+    validations:
+      required: true
+
+  - type: input
+    id: device-info
+    attributes:
+      label: Device Information
+      description: Device model, OS version, and any relevant specs
+      placeholder: "iPhone 14 Pro, iOS 17.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe what happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Step-by-step instructions to reproduce the bug
+      placeholder: |
+        1. Open the app
+        2. Navigate to '...'
+        3. Tap on '...'
+        4. See error
+      value: |
+        1. 
+        2. 
+        3. 
+        4. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe the expected behavior...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened instead?
+      placeholder: Describe what actually happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Logs/Console Output
+      description: If applicable, add any error messages or console output
+      placeholder: Paste error logs here (remove any sensitive information)
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots/Videos
+      description: If applicable, add screenshots or videos to help explain the problem
+      placeholder: Drag and drop images/videos here or paste URLs
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this occur?
+      options:
+        - Always (100%)
+        - Often (50-90%)
+        - Sometimes (10-50%)
+        - Rarely (< 10%)
+        - Only once
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Bug Severity
+      description: How severe is this bug?
+      options:
+        - Critical (App crashes, data loss, security issue)
+        - High (Major feature broken, significant impact)
+        - Medium (Feature partially broken, moderate impact)
+        - Low (Minor issue, cosmetic problem)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: Feature Area
+      description: Which part of the app is affected?
+      options:
+        - Authentication/Login
+        - PDF Upload
+        - OCR Processing
+        - AI Analysis
+        - Results Dashboard
+        - Payment/Coins
+        - Profile/Settings
+        - Biometric Auth
+        - Push Notifications
+        - Data Export
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Is there a temporary workaround for this issue?
+      placeholder: Describe any workaround you found...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: Any additional information that might be helpful...
+
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: Privacy & Data Protection
+      description: Please confirm you understand our privacy requirements
+      options:
+        - label: I confirm that this report contains NO real patient data or PHI
+          required: true
+        - label: I confirm that any screenshots/videos are from test data only
+          required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

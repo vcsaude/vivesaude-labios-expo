@@ -1,0 +1,238 @@
+name: ✨ Feature Request
+description: Suggest a new feature for ViveSaude Lábios
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🏥 ViveSaude Lábios Feature Request
+        
+        Thanks for suggesting a new feature! Your ideas help us improve healthcare accessibility.
+        
+        **💡 Quick Tips**:
+        - Check existing issues to avoid duplicates
+        - Consider healthcare compliance requirements
+        - Think about user privacy and data protection
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Category
+      description: What type of feature is this?
+      options:
+        - New Feature
+        - Enhancement to Existing Feature
+        - Integration with External Service
+        - Accessibility Improvement
+        - Performance Optimization
+        - Security Enhancement
+        - Healthcare Compliance
+        - Developer Experience
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: Feature Area
+      description: Which part of the app would this feature affect?
+      options:
+        - Authentication/Login
+        - PDF Upload & Processing
+        - OCR & Data Extraction
+        - AI Analysis Engine
+        - Results Dashboard
+        - Payment & Coin System
+        - Profile & Settings
+        - Biometric Security
+        - Push Notifications
+        - Data Export/Sharing
+        - Apple Health Integration
+        - Telemedicine
+        - Multi-language Support
+        - Accessibility
+        - Developer Tools
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-summary
+    attributes:
+      label: Feature Summary
+      description: A concise summary of the feature you'd like to see
+      placeholder: "Add support for..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description
+      description: What problem would this feature solve? What's the current pain point?
+      placeholder: |
+        Currently, users experience...
+        This makes it difficult to...
+        As a result, they have to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your ideal solution to this problem
+      placeholder: |
+        I would like to see...
+        This would work by...
+        Users would benefit because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternative-solutions
+    attributes:
+      label: Alternative Solutions
+      description: Are there alternative approaches you've considered?
+      placeholder: |
+        Alternative approach 1: ...
+        Alternative approach 2: ...
+        Why the main proposal is better: ...
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: User Type
+      description: Who would primarily benefit from this feature?
+      options:
+        - Patients/End Users
+        - Healthcare Professionals
+        - Caregivers/Family Members
+        - Developers/Administrators
+        - All Users
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority-level
+    attributes:
+      label: Priority Level
+      description: How important is this feature to you?
+      options:
+        - Critical (Blocking current workflow)
+        - High (Significantly improves experience)
+        - Medium (Nice to have, moderate impact)
+        - Low (Minor improvement)
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases & User Stories
+      description: Provide specific examples of how this feature would be used
+      placeholder: |
+        As a [user type], I want to [goal] so that [benefit].
+        
+        Example scenarios:
+        1. When a user...
+        2. If someone needs to...
+        3. During the process of...
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-considerations
+    attributes:
+      label: Technical Considerations
+      description: Any technical aspects, constraints, or implementation ideas?
+      placeholder: |
+        This might require:
+        - Integration with...
+        - Changes to the...
+        - New dependencies like...
+        - Consideration of...
+
+  - type: checkboxes
+    id: compliance-considerations
+    attributes:
+      label: Healthcare Compliance
+      description: Check any compliance considerations that apply
+      options:
+        - label: HIPAA compliance required
+        - label: LGPD compliance required
+        - label: Medical device regulations may apply
+        - label: Patient consent mechanisms needed
+        - label: Audit trail requirements
+        - label: Data encryption/security considerations
+
+  - type: textarea
+    id: mockups-references
+    attributes:
+      label: Mockups/References
+      description: Any wireframes, mockups, or references to similar features?
+      placeholder: |
+        Links to similar implementations:
+        - App X does this by...
+        - Reference design: ...
+        
+        (Attach images or provide URLs)
+
+  - type: dropdown
+    id: implementation-complexity
+    attributes:
+      label: Estimated Implementation Complexity
+      description: How complex do you think this feature might be to implement?
+      options:
+        - Simple (Small UI changes, existing patterns)
+        - Medium (New UI components, moderate backend changes)
+        - Complex (Major architectural changes, new integrations)
+        - Very Complex (Fundamental changes, multiple systems)
+        - Unknown/Unsure
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How would you define "done" for this feature?
+      placeholder: |
+        This feature is complete when:
+        - [ ] Users can...
+        - [ ] The system...
+        - [ ] Data is...
+        - [ ] Performance meets...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: |
+        Related issues: #123
+        External resources: ...
+        Timeline considerations: ...
+
+  - type: checkboxes
+    id: research-done
+    attributes:
+      label: Research & Due Diligence
+      description: Please confirm you've done your research
+      options:
+        - label: I've searched existing issues for similar feature requests
+          required: true
+        - label: I've considered the healthcare compliance implications
+          required: true
+        - label: I understand this is a suggestion and not a guarantee of implementation
+          required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
