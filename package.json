@@ -49,6 +49,7 @@
     
     "env:setup": "cp .env.example .env",
     "secrets:encrypt": "eas secret:push --scope project",
+    "gh:vars:export": "bash .github/scripts/gh-export-env.sh",
     "config:validate": "expo config --type public",
     
     "security:audit": "npm audit && npx audit-ci",
