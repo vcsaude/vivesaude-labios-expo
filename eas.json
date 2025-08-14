@@ -8,13 +8,11 @@
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium",
-        "simulator": true,
-        "bundleIdentifier": "com.vivesaude.labios.dev"
+        "simulator": true
       },
       "android": {
         "buildType": "apk",
-        "gradleCommand": ":app:assembleDebug",
-        "applicationId": "com.vivesaude.labios.dev"
+        "gradleCommand": ":app:assembleDebug"
       },
       "channel": "development",
       "env": {
@@ -26,13 +24,11 @@
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium",
-        "bundleIdentifier": "com.vivesaude.labios.preview",
         "simulator": false
       },
       "android": {
         "buildType": "apk",
-        "gradleCommand": ":app:assembleRelease",
-        "applicationId": "com.vivesaude.labios.preview"
+        "gradleCommand": ":app:assembleRelease"
       },
       "channel": "preview",
       "env": {
@@ -50,19 +46,11 @@
     "production": {
       "ios": {
         "resourceClass": "m-large",
-        "bundleIdentifier": "com.vivesaude.labios",
-        "simulator": false,
-        "entitlements": {
-          "com.apple.developer.healthkit": true,
-          "com.apple.developer.healthkit.access": [
-            "health-records"
-          ]
-        }
+        "simulator": false
       },
       "android": {
-        "buildType": "aab",
-        "gradleCommand": ":app:bundleRelease",
-        "applicationId": "com.vivesaude.labios"
+        "buildType": "app-bundle",
+        "gradleCommand": ":app:bundleRelease"
       },
       "channel": "production",
       "env": {
@@ -94,11 +82,5 @@
         "track": "internal"
       }
     }
-  },
-  "updates": {
-    "url": "https://u.expo.dev/YOUR_PROJECT_ID"
-  },
-  "runtimeVersion": {
-    "policy": "sdkVersion"
   }
 }

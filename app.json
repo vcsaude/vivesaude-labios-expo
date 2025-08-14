@@ -34,7 +34,21 @@
           }
         }
       ],
-      "@logrocket/react-native"
-    ]
+      "@logrocket/react-native",
+      "expo-font",
+      "expo-secure-store"
+    ],
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d7a051e2-c02d-4c2b-b889-54e7096f4323"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d7a051e2-c02d-4c2b-b889-54e7096f4323"
+      }
+    },
+    "owner": "vcsaude"
   }
 }
