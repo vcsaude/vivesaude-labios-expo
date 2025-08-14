@@ -1,35 +1,37 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Updates from 'expo-updates';
-import UploadScreen from './src/screens/UploadScreen';
+
+// Navigation
+import AppNavigator from './src/navigation/AppNavigator';
+
+// Components
+import { useToast } from './src/components/ui/Toast';
 
 export default function App() {
+  const { ToastComponent } = useToast();
+
   useEffect(() => {
-    // Lazy init to avoid crashes if dependency is not installed yet
-    (async () => {
-      try {
-        const mod = await import('@logrocket/react-native');
-        const LogRocket = (mod as any).default ?? mod;
-        if (LogRocket && typeof LogRocket.init === 'function') {
-          LogRocket.init('rilppt/vcsaude', {
-            updateId: (Updates as any).isEmbeddedLaunch ? null : (Updates as any).updateId,
-            expoChannel: (Updates as any).channel,
-          });
-        }
-      } catch (e) {
-        // Silently ignore if package not available in this build
-      }
-    })();
+    // Skip LogRocket initialization for now to avoid import.meta issues
+    console.log('App initialized successfully');
   }, []);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="dark" />
-      <UploadScreen />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="dark" backgroundColor="#ffffff" />
+        <AppNavigator />
+        <ToastComponent />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#ffffff' },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#ffffff' 
+  },
 });
